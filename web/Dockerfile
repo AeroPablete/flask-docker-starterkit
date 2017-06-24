@@ -8,5 +8,4 @@ WORKDIR $INSTALL_PATH
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-# COPY . .
 VOLUME $INSTALL_PATH

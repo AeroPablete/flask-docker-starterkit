@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  web:
+    restart: always
+    build: ./web
+    volumes:
+      - './web:/usr/src/app'
+    ports:
+      - '8000:8000'
+    env_file: .env
+    command: /usr/local/bin/gunicorn -b 0.0.0.0:8000 "app.app:create_app()" --reload --access-logfile -
